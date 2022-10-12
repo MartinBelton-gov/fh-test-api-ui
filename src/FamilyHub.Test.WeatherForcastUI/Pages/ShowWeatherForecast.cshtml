@@ -1,0 +1,46 @@
+﻿@page
+@model FamilyHub.Test.WeatherForcastUI.Pages.ShowWeatherForecastModel
+@{
+}
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<h2>Weather Forecast </h2>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Temperature (Celsius)</th>
+        <th>Temperature (Fahrenheit)</th>
+        <th>Summary</th>
+    </tr>
+    @foreach(var waetherForecast in Model.WeatherForecasts)
+    {
+        <tr>
+            <td>@waetherForecast.Date.ToString()</td>
+            <td>@waetherForecast.TemperatureC.ToString()</td>
+            <td>@waetherForecast.TemperatureF.ToString()</td>
+            <td>@waetherForecast.Summary</td>
+        </tr>
+    }
+    
+</table>
+
+
+
